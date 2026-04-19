@@ -8,8 +8,7 @@
 #include <vector>
 
 #include "Structures.h"
-#include "structures/CandleStructures.hpp"
-#include "structures/LogStructures.hpp"
+#include "model/FeederCandle.hpp"
 
 class Core;
 
@@ -28,11 +27,11 @@ public:
    //+------------------------------------------------------------------+
     // Chart
     //+------------------------------------------------------------------+
-    virtual int GetCandles(const std::string& symbol, const std::string& frame, time_t from, time_t to, std::vector<CandleRecord>* candles);
-    virtual int SetCandles(const std::string& symbol, const std::vector<CandleRecord>& candles);
+    virtual int GetCandles(const std::string& symbol, const std::string& frame, time_t from, time_t to, std::vector<FeederCandleRecord>* candles);
+    virtual int SetCandles(const std::string& symbol, const std::vector<FeederCandleRecord>& candles);
     virtual int DeleteCandlesAll(const std::string& symbol);
     virtual int DeleteCandlesPeriod(const std::string& symbol, time_t from, time_t to);
-    virtual int ImportCandleStores(const std::vector<CandleRecord>& candles, int flush_data,const std::string& symbol);
+    virtual int ImportCandleStores(const std::vector<FeederCandleRecord>& candles, int flush_data,const std::string& symbol);
 
     //+------------------------------------------------------------------+
     // Stream
