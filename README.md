@@ -28,6 +28,9 @@ The SDK exposes only feeder-facing public headers and shared public structures r
 
 Feeder contract:
 
+- `FeederServerInterface` is an abstract host interface, not a concrete runtime class
+- feeder modules must not construct or store `FeederServerInterface` by value
+- the host creates the runtime implementation and passes it to `create_feeder(..., FeederServerInterface*)`
 - feeder state uses `FeederStateRecord`
 - chart methods use `FeederCandleRecord`
 - internal `structures/*.hpp` are no longer the public feeder contract
