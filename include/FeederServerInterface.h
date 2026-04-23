@@ -8,7 +8,7 @@
 #include <vector>
 
 #include "Structures.h"
-#include "model/FeederCandle.hpp"
+#include "sdk_contract/feeder/FeederCandle.hpp"
 
 class Core;
 

@@ -5,7 +5,7 @@
 #include "string"
 #include <rapidjson/document.h>
 #include "Structures.h"
-#include "model/FeederState.hpp"
+#include "sdk_contract/feeder/FeederState.hpp"
 
 inline int FEEDER_VERSION_API = 128;
 
