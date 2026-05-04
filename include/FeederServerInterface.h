@@ -8,7 +8,7 @@
 #include <vector>
 
 #include "Structures.h"
-#include "sdk_contract/feeder/FeederCandle.hpp"
+#include "model/FeederCandle.hpp"
 
 class Core;
 
@@ -37,4 +37,11 @@ public:
     virtual int SendToManager(int manager_id, const rapidjson::Value& data) = 0; //send data to some Manager
     virtual int BroadcastToManagers(const rapidjson::Value& data) = 0; //send data to all Managers
     virtual int BroadcastNotifyToManagers(const rapidjson::Value& data) = 0; //send data to all Managers
+
+    //+------------------------------------------------------------------+
+    // Symbols
+    //+------------------------------------------------------------------+
+    virtual int GetSymbolsList(std::vector<std::string>* symbols) = 0;
+    virtual int GetSymbolsListBySecId(int sec_index, std::vector<std::string>* symbols) = 0;
+
 };
