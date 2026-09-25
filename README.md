@@ -32,6 +32,12 @@ Feeder contract:
 - feeder modules must not construct or store `FeederServerInterface` by value
 - the host creates the runtime implementation and passes it to `create_feeder(..., FeederServerInterface*)`
 - feeder state uses `FeederStateRecord`
+
+`GetState()` is an optional, non-blocking health callback. Return `RET_OK` and
+fill `last_ping` with the Unix time of the last successful upstream heartbeat;
+`last_tick` is the last upstream quote time. The platform combines these values
+with the time of the last `TickSet()` callback. The default `RET_OK_NONE` means
+that health reporting is unsupported and remains backward compatible.
 - chart methods use `FeederCandleRecord`
 - internal `structures/*.hpp` are no longer the public feeder contract
 
